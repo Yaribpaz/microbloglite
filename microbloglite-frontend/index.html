@@ -1,59 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="landing.css" />
 
     <title>Login to the Microblog Network!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="./auth.js"></script>
     <script>
-        // If the user IS logged in, redirect to posts.html
-        if (isLoggedIn() === true) window.location.replace("posts.html");
+      // If the user IS logged in, redirect to posts.html
+      if (isLoggedIn() === true) window.location.replace("posts.html");
     </script>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+      <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
     </header>
 
     <main>
+      <div class="section">
+        <div class="container">
+          <div class="row full-height justify-content-center">
+            <div class="col-12 text-center align-self-center py-5">
+              <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                <h6 class="mb-0 pb-3"><span>LOGIN</span> <span>SIGNUP</span></h6>
+                <input class="checkbox" type="checkbox" id="regLog" name="regLog" />
+                <label for="regLog"></label>
+                
+                <div class="card3DWrap mx-auto">
+                  <div class="card3DWrapper">
+                    <div class="cardLogin">
+                      <div class="centerWrap">
+                        <div class="section-text-center">
+                          <h4 class="mb-4 pb-3">Log In</h4>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
+                          <form id="login">
+                            <div class="formGroup mt-2">
+                              <!-- <label for="username">Username</label> -->
+                              <input type="text" id="username" minlength="3" placeholder="Username" class="formStyle" />
+                              <i class="input-icon uil uil-at"></i>
+                            </div>
+
+                            <div class="formGroup mt-2">
+                              <!-- <label for="password">Password</label> -->
+                              <input type="password" id="password" minlength="6" placeholder="Password" class="formStyle" />
+                              <i class="input-icon uil uil-lock-alt"></i>
+                            </div>
+
+                            <button id="loginButton" type="submit" class="btn mt-4">Login</button>
+                            <p class="mb-0 mt-4 text-center" class="link">Forgot your password?</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cardSignup">
+                      <div class="centerWrap">
+                        <div class="section text-center">
+                          <h4 class="mb-4 pb-3">Sign up</h4>
+                          <div class="formGroup">
+                            <input  type="text" id="fullName" placeholder="Full Name" class="formStyle"/>
+                            <i class="input-icon uil uil-user"> </i>
+                          </div>
+                          <div class="formGroup mt-2">
+                            <input type="email" class="formStyle" placeholder="Email" />
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="formGroup mt-2">
+                            <input type="password" class="formStyle" placeholder="password" />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <button class="btn mt-4">Signup</button>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
-
-            <button id="loginButton" type="submit">Login</button>
-        </form>
-
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer></footer>
 
     <!-- Page-specific code -->
     <script src="landing.js"></script>
-</body>
+  </body>
 </html>
