@@ -192,8 +192,6 @@ input:focus::-webkit-input-placeholder {
   position: absolute;
 }
 
-
-
 .cardSignup {
   transform: rotateY(180deg);
 }
