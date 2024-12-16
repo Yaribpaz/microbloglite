@@ -1,1 +1,21 @@
 /* Posts Page CSS */
+.nav-item {
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertically align icon and link */
+  }
+  
+  .nav-icon {
+    font-size: 1.5rem; /* Larger icon size */
+    color: #007bff; /* Optional icon color */
+  }
+  
+  .nav-link {
+    font-size: 1.5rem; /* Larger text size */
+    color: inherit; /* Inherit text color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .nav-link:hover {
+    background-color: lightgray; /* Hover background */
+    border-radius: 5px; /* Rounded corners */
+  }
