@@ -1,4 +1,29 @@
 /* Landing Page CSS */
+a {
+    cursor: pointer;
+    transition: all 200ms linear;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.link {
+    color: #c4c3ca;
+}
+
+.link:hover {
+    color: #040407;
+    
+}
+
+h6 span {
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+}
+
 [type="checkbox"] {
   position: absolute;
   appearance: none;
@@ -11,6 +36,7 @@
   text-align: center;
   width: 60px;
   height: 16px;
+  background-color: white;
   border-radius: 8px;
   padding: 0;
   margin: 10px auto;
@@ -23,7 +49,11 @@
   display: block;
   width: 36px;
   height: 36px;
+  background-color: #4f4fb7;
   border-radius: 50%;
+  color: white;
+  font-family: "unicons-line";
+  content: "\eb4f";
   z-index: 20;
   top: -10px;
   left: -10px;
@@ -93,6 +123,7 @@
 }
 
 .formStyle {
+  color: #040407;
   padding: 13px 20px;
   padding-left: 55px;
   height: 48px;
@@ -105,11 +136,13 @@
   outline: none;
   border: none;
   transition: all 200ms linear;
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
 }
 
 .formStyle :focus {
   border: none;
   outline: none;
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
 }
 
 .input-icon {
@@ -120,7 +153,38 @@
   font-size: 24px;
   line-height: 48px;
   text-align: left;
+
   transition: all 200ms linear;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: all 200ms linear;
+}
+
+.btn {
+  background-color: #4f4fb7;
+  color: white;
+  border-radius: 4px;
+  height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 200ms linear;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+}
+
+.btn:hover {
+  background-color: white;
+  color: #07090d;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
 }
 
 .cardLogin,
@@ -128,10 +192,17 @@
   position: absolute;
 }
 
+
+
 .cardSignup {
   transform: rotateY(180deg);
 }
 
-.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+.checkbox:checked ~ .card3DWrap .card3DWrapper {
   transform: rotateY(180deg);
 }
+
+.bg-primary {
+  background-color: #040407 !important;
+}
+
