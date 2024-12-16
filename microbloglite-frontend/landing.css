@@ -147,16 +147,15 @@ h6 span {
 
 .input-icon {
   position: absolute;
-  top: 0;
-  left: 18px;
+  top: 12px; /* Adjust this value to position the icon properly */
+  left: 12px; /* Adjust this value to position the icon properly */
   height: 48px;
-  font-size: 24px;
-  line-height: 48px;
+  font-size: 24px; /* Match the size with your input */
+  line-height: 24px; /* Match the height with your input */
   text-align: left;
 
   transition: all 200ms linear;
 }
-
 input:focus::-webkit-input-placeholder {
   opacity: 0;
   transition: all 200ms linear;

@@ -63,6 +63,7 @@ function login (loginData) {
 }
 
 
+
 // This is the `logout()` function you will use for any logout button
 // which you may include in various pages in your app. Again, READ this
 // function and you will probably want to re-use parts of it for other
@@ -94,3 +95,48 @@ function logout () {
             window.location.assign("/");  // redirect back to landing page (index.html)
         });
 }
+
+
+
+document.getElementById("signupForm").addEventListener("submit", async function (event) {
+    event.preventDefault(); 
+
+   
+    const fullName = document.getElementById("fullName").value;
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+   
+    const userData = {
+        fullName: fullName,
+        username: username,
+        email: email,
+        password: password,
+    };
+
+    try {
+        
+        const response = await fetch(apiBaseURL + "/api/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+        });
+
+        if (!response.ok) {
+    
+            const errorData = await response.json();
+            alert(`Error: ${errorData.message}`);
+            return;
+        }
+
+        // Successful registration
+        alert("Registration successful! Redirecting to login page...");
+        window.location.href = "index.html"; 
+    } catch (error) {
+        console.error("Registration Error:", error);
+        alert("Something went wrong. Please try again.");
+    }
+});

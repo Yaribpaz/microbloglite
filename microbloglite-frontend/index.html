@@ -51,52 +51,53 @@
                 
                 <div class="card3DWrap mx-auto">
                   <div class="card3DWrapper">
-
-                    
+    
                     <div class="cardLogin">
                       <div class="centerWrap">
-                       
                         <div class="section-text-center">
                           <h4 class="mb-4 pb-3">Log In</h4>
-
+    
                           <form id="login">
                             <div class="formGroup mt-2">
-                              <!-- <label for="username">Username</label> -->
                               <input type="text" id="username" minlength="3" placeholder="Username" class="formStyle" />
                               <i class="input-icon uil uil-at"></i>
                             </div>
-
+    
                             <div class="formGroup mt-2">
-                              <!-- <label for="password">Password</label> -->
                               <input type="password" id="password" minlength="6" placeholder="Password" class="formStyle" />
                               <i class="input-icon uil uil-lock-alt"></i>
                             </div>
-
+    
                             <button id="loginButton" type="submit" class="btn mt-4">Login</button>
                             <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
-                          
+                          </form>
                         </div>
                       </div>
                     </div>
+    
                     <div class="cardSignup">
                       <div class="centerWrap">
-                        
                         <div class="section text-center">
                           <h4 class="mb-4 pb-3">Sign up</h4>
-                          <div class="formGroup">
-                            <input  type="text" id="fullName" placeholder="Full Name" class="formStyle"/>
-                            <i class="input-icon uil uil-user"> </i>
-                          </div>
-                          <div class="formGroup mt-2">
-                            <input type="email" class="formStyle" placeholder="Email" />
-                            <i class="input-icon uil uil-at"></i>
-                          </div>
-                          <div class="formGroup mt-2">
-                            <input type="password" class="formStyle" placeholder="Password" />
-                            <i class="input-icon uil uil-lock-alt"></i>
-                          </div>
-                          <button class="btn mt-4">Signup</button>
-                        </form>
+                          <form id="signupForm">
+                            <div class="formGroup">
+                              <input type="text" id="fullName" placeholder="Full Name" class="formStyle" required />
+                              <i class="input-icon uil uil-user"></i>
+                            </div>
+                            <div class="formGroup mt-2">
+                              <input type="text" id="username" placeholder="Username" class="formStyle" required />
+                              <i class="input-icon uil uil-at"></i>
+                            </div>
+                            <div class="formGroup mt-2">
+                              <input type="email" id="email" class="formStyle" placeholder="Email" required />
+                              <i class="input-icon uil uil-at"></i> <!-- Positioned at the left of the input field -->
+                            </div>
+                            <div class="formGroup mt-2">
+                              <input type="password" id="password" class="formStyle" placeholder="Password" required />
+                              <i class="input-icon uil uil-lock-alt"></i>
+                            </div>
+                            <button type="submit" class="btn mt-4">Signup</button>
+                          </form>
                         </div>
                       </div>
                     </div>
@@ -108,7 +109,7 @@
         </div>
       </div>
     </main>
-
+    
     <footer></footer>
 
     <!-- Page-specific code -->
