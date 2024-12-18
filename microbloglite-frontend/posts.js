@@ -1,13 +1,13 @@
 /* Posts Page JavaScript */
 
 "use strict";
-const apiBaseURL = "http://localhost:5005";
+//const apiBaseURL = "http://localhost:5005";
 
 const tweetForm = document.getElementById('tweetForm');
 const tweetTextInput = document.getElementById('tweetText');
 
 
-const authToken = "your-auth-token-here";
+const authToken = getLoginData().token;
 
 tweetForm.addEventListener('submit', async (event) => {
   event.preventDefault(); 
