@@ -9,6 +9,10 @@
     background-color: #07090d !important;
 }
 
+p {
+    color: white;
+}
+
   body {
     display: flex;
     height: 100vh;
@@ -260,3 +264,7 @@
   .trendingItem p strong {
     color: #1da1f2;
   }
+
+.card-body, .bioCard {
+    background-color: #07090d;
+}
