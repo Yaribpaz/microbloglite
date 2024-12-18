@@ -13,6 +13,7 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -35,59 +36,151 @@
       if (isLoggedIn() === false) window.location.replace("/");
     </script>
   </head>
-  <body>
-    <header>
-      <h1>POSTS PAGE</h1>
-    </header>
+  <body class="bg-primary">
+    <div class="sidebar">
+      <div class="sidebarOption active">
+        <i class="uil uil-estate"></i>
+        <h2>Home</h2>
+      </div>
+      <div class="sidebarOption">
+        <i class="uil uil-search"></i>
+        <h2>Explore</h2>
+      </div>
+      <div class="sidebarOption">
+        <i class="uil uil-bell"></i>
+        <h2>Notifications</h2>
+      </div>
+      <div class="sidebarOption">
+        <i class="uil uil-envelope"></i>
+        <h2>Messages</h2>
+      </div>
+      <div class="sidebarOption">
+        <i class="uil uil-bookmark"></i>
+        <h2>Bookmarks</h2>
+      </div>
+      <div class="sidebarOption">
+        <i class="uil uil-user-circle"></i>
+        <h2>Profile</h2>
+      </div>
+      <div class="sidebarOption" id="logoutButton">
+        <i class="uil uil-sign-out-alt"></i>
+        <h2>Logout</h2>
+      </div>
+      <div class="sidebarOption">
+        <i class="uil uil-ellipsis-h"></i>
+        <h2>More</h2>
+      </div>
+      <button class="sidebar_tweet">New Post</button>
+    </div>
 
-    <div class="container mt-4">
-        <div class="d-flex flex-column p-3" style="width: 250px;">
-          <!-- Home -->
-          <div class="nav-item d-flex align-items-center mb-3">
-            <i class="nav-icon uil uil-estate"></i>
-            <a href="#" class="nav-link active ms-2">Home</a>
+    <!-- Feed -->
+    <div class="feed">
+      <div class="feed_header"><h2>Home</h2></div>
+
+      <div class="tweetBox">
+        <form id="tweetForm">
+          <div class="tweetbox_input">
+            <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png" alt="Avatar" />
+            <input type="text" id="tweetText" placeholder="What's up?" />
           </div>
-      
-          <!-- Search -->
-          <div class="nav-item d-flex align-items-center mb-3">
-            <i class="nav-icon uil uil-search"></i>
-            <a href="#" class="nav-link ms-2">Search</a>
+          <div class="tweetbox_icons">
+            <i class="uil uil-image"></i>
+            <i class="uil uil-smile"></i>
+            <i class="uil uil-film"></i>
+
+            <button type="submit" class="tweetBox_tweetButton">Post</button>
           </div>
-      
-          <!-- Notifications -->
-          <div class="nav-item d-flex align-items-center mb-3">
-            <i class="nav-icon uil uil-bell"></i>
-            <a href="#" class="nav-link ms-2">Notifications</a>
+        </form>
+      </div>
+
+      <!-- Sample Post -->
+      <div class="post">
+        <div class="post_avatar">
+          <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png" alt="Avatar" />
+        </div>
+        <div class="post_body">
+          <div class="post_header">
+            <div class="post_headerText">
+              <h3>
+                Aya Oosawa
+                <span class="postHeaderSpecial"> @Pinkie </span>
+              </h3>
+            </div>
+            <div class="post_headerDescription">
+              <p>....</p>
+            </div>
           </div>
-      
-          <!-- Chat -->
-          <div class="nav-item d-flex align-items-center mb-3">
-            <i class="nav-icon uil uil-comment-dots"></i>
-            <a href="#" class="nav-link ms-2">Chat</a>
+          <img src="https://i.pinimg.com/736x/99/e5/04/99e504a4aa25cad170d7d032dde9c24b.jpg" alt="Post Image" />
+          <div class="post_footer">
+            <i class="uil uil-comment"></i>
+            <i class="uil uil-repeat"></i>
+            <i class="uil uil-heart"></i>
+            <i class="uil uil-share-alt"></i>
           </div>
-      
-          <!-- Profile -->
-          <div class="nav-item d-flex align-items-center mb-3">
-            <i class="nav-icon uil uil-user-circle"></i>
-            <a href="#" class="nav-link ms-2">Profile</a>
-          </div>
-      
-          <!-- Settings -->
-          <div class="nav-item d-flex align-items-center mb-3">
-            <i class="nav-icon uil uil-cog"></i>
-            <a href="#" class="nav-link ms-2">Settings</a>
-          </div>
-      
-          <!-- Button -->
-          <button class="btn btn-primary mt-3">New Post</button>
         </div>
       </div>
+    </div>
+
+    <div class="widgets">
+      <div class="widgets__input">
+        <i class="uil uil-search searchWidget"></i>
+        <input type="text" placeholder="Search Twitter" />
+      </div>
+
+      <div class="widgets__widgetContainer">
+        <h2>What's happening</h2>
+
+        <div class="trendingItem">
+          <div class="trendingItem__content">
+            <a href="https://x.com/i/events/1790907663011729408" target="_blank">
+              <img
+                src="https://www.spectator.co.uk/wp-content/uploads/2023/09/Pop.jpg"
+                alt="The Strokes"
+                class="trendingItem__image"
+              />
+              <div class="trendingItem__details">
+                <strong>The Strokes Performs at NYC</strong>
+                <p>1 hour ago</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="trendingItem">
+        <p>Music · Trending</p>
+        <a href="https://x.com/search?q=McCaskeys&src=trend_click" target="_blank">
+          <strong>Alex Turner</strong>
+        </a>
+      </div>
+
+      <div class="trendingItem">
+        <p>Music Trending · Trending</p>
+        <a href="https://x.com/search?q=DeRozan&src=trend_click&vertical=trends" target="_blank">
+          <strong>The Pretenders</strong>
+        </a>
+      </div>
+
+      <div class="trendingItem">
+        <p>Music · Trending</p>
+        <a href="https://x.com/search?q=%22Jamal+Murray%22&src=trend_click&vertical=trends" target="_blank">
+          <strong>Red Hot Chili Peppers</strong>
+        </a>
+        <p>1,232 posts</p>
+      </div>
+
+      <div class="trendingItem">
+        <p>Music · Trending</p>
+        <a href="https://x.com/search?q=%22Aaron+Gordon%22&src=trend_click&vertical=trends" target="_blank">
+          <strong>Jimi Hendrix</strong>
+        </a>
+      </div>
+    </div>
 
     <main></main>
 
     <footer></footer>
 
-    <!-- Page-specific code -->
     <script src="posts.js"></script>
   </body>
 </html>
