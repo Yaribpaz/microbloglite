@@ -64,6 +64,19 @@ p {
     margin-top: 20px;
     cursor: pointer;
   }
+
+  .sidebarOption a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the parent color */
+    display: flex; /* Match the flex layout of the parent */
+    align-items: center;
+    width: 100%; /* Ensures the entire link is clickable */
+  }
+  
+  .sidebarOption a:hover {
+    color: inherit; /* Prevent color change on hover */
+  }
+  
   
   /* Feed */
   .feed {
