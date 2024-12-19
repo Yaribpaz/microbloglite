@@ -17,6 +17,11 @@ a:hover {
     
 }
 
+h1{
+  color: white;
+  font-weight: bold;
+}
+
 h6 span {
   padding: 0 20px;
   text-transform: uppercase;
