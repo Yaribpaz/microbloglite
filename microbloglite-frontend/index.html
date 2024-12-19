@@ -35,10 +35,11 @@
     </script>
   </head>
   <body class="bg-primary">
-    <header>
-      <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
-    </header>
-
+    <div class="d-flex justify-content-center mt-4 pt-4">
+      <header>
+        <h1>Welcome to Birdie! Join the Conversation.</h1>
+      </header>
+    </div>
     <main>
       <div class="section">
         <div class="container">
@@ -48,33 +49,38 @@
                 <h6 class="mb-0 pb-3"><span>LOGIN</span> <span>SIGNUP</span></h6>
                 <input class="checkbox" type="checkbox" id="regLog" name="regLog" />
                 <label for="regLog"></label>
-                
+
                 <div class="card3DWrap mx-auto">
                   <div class="card3DWrapper">
-    
                     <div class="cardLogin">
                       <div class="centerWrap">
                         <div class="section-text-center">
                           <h4 class="mb-4 pb-3">Log In</h4>
-    
+
                           <form id="login">
                             <div class="formGroup mt-2">
                               <input type="text" id="username" minlength="3" placeholder="Username" class="formStyle" />
                               <i class="input-icon uil uil-at"></i>
                             </div>
-    
+
                             <div class="formGroup mt-2">
-                              <input type="password" id="password" minlength="6" placeholder="Password" class="formStyle" />
+                              <input
+                                type="password"
+                                id="password"
+                                minlength="6"
+                                placeholder="Password"
+                                class="formStyle"
+                              />
                               <i class="input-icon uil uil-lock-alt"></i>
                             </div>
-    
+
                             <button id="loginButton" type="submit" class="btn mt-4">Login</button>
                             <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
                           </form>
                         </div>
                       </div>
                     </div>
-    
+
                     <div class="cardSignup">
                       <div class="centerWrap">
                         <div class="section text-center">
@@ -90,7 +96,7 @@
                             </div>
                             <div class="formGroup mt-2">
                               <input type="email" id="email" class="formStyle" placeholder="Email" required />
-                              <i class="input-icon uil uil-at"></i> 
+                              <i class="input-icon uil uil-envelope-alt"></i>
                             </div>
                             <div class="formGroup mt-2">
                               <input type="password" id="password" class="formStyle" placeholder="Password" required />
@@ -109,7 +115,7 @@
         </div>
       </div>
     </main>
-    
+
     <footer></footer>
 
     <!-- Page-specific code -->
