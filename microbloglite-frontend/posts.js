@@ -72,34 +72,6 @@ function populatePostCards(posts) {
   }
 }
 
-// function createPostCard(post) {
-//   // const cardContainer = document.createElement("div");
-//   // cardContainer.className = "card";
-//   // cardContainer.style.width = "18rem";
-
-//   // const cardBody = document.createElement("div");
-//   // cardBody.className = "card-body";
-
-//   // const cardTitle = document.createElement("h6");
-//   // cardTitle.className = "card-title";
-//   // cardTitle.textContent = posts.productName;
-
-//   // const cardSubtitle = document.createElement("h6");
-//   // cardSubtitle.className = "card-subtitle mb-2 text-body-secondary";
-//   // cardSubtitle.textContent = "$" + product.unitPrice.toFixed(2);
-
-//   // const cardText = document.createElement("p");
-//   // cardText.className = "card-text text-body-secondary";
-//   // cardText.textContent = product.supplier;
-
-//   // cardBody.appendChild(cardTitle);
-//   // cardBody.appendChild(cardSubtitle);
-//   // cardBody.appendChild(cardText);
-//   // cardContainer.appendChild(cardBody);
-
-//   postList.appendChild(cardContainer);
-// }
-
 function createPostCard(post) {
   // Create the outer post div
   const postDiv = document.createElement("div");
@@ -157,13 +129,14 @@ function createPostCard(post) {
   repeatIcon.classList.add("uil", "uil-repeat");
   const heartIcon = document.createElement("i");
   heartIcon.classList.add("uil", "uil-heart");
-  const shareIcon = document.createElement("i");
-  shareIcon.classList.add("uil", "uil-share-alt");
+  const trashIcon = document.createElement("i");
+  trashIcon.classList.add("uil", "uil-trash-alt", "delete-post");
+  trashIcon.dataset.postid = post._id;
 
   postFooterDiv.appendChild(commentIcon);
   postFooterDiv.appendChild(repeatIcon);
   postFooterDiv.appendChild(heartIcon);
-  postFooterDiv.appendChild(shareIcon);
+  postFooterDiv.appendChild(trashIcon);
 
   // Append everything together
   postBodyDiv.appendChild(postHeaderDiv);
@@ -175,6 +148,32 @@ function createPostCard(post) {
 
   return postDiv;
 }
+
+document.addEventListener("click", async function (event) {
+  if (event.target.classList.contains("delete-post")) {
+    const postId = event.target.dataset.postid; // Get the post ID
+    console.log(`Post ID to delete: ${postId}`);
+    if (confirm("Are you sure you want to delete this post?")) {
+      try {
+        const response = await fetch(`${apiBaseURL}/api/posts/${postId}`, {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${authToken}`, // Use the authToken
+          },
+        });
+
+        if (response.ok) {
+          console.log("Post deleted successfully");
+          initializePage(); // Reload posts after deletion
+        } else {
+          console.error("Failed to delete post", await response.json());
+        }
+      } catch (error) {
+        console.error("Error deleting post:", error);
+      }
+    }
+  }
+});
 
 async function initializePage() {
   let posts = await getPosts();
